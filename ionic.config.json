@@ -1,0 +1,7 @@
+{
+  "name": "BIMA",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
