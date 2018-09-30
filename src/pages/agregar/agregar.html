@@ -1,0 +1,191 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Nuevo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg-style">
+
+	<!-- isologo inicio-->
+	<div id="logo" padding text-center>
+    <img src="./assets/img/Logo_bima_Blanco.png">
+    </div>
+	<!-- isologo fin-->
+
+	<!--Bima-->
+	<div id="tex" padding text-center>
+		<h1 ion-text>BIMA</h1>
+	</div>	
+	
+	<!--Posicionamiento-->
+	<div id="timeline">
+		 <!--Cuadricula-->
+		<ion-grid class="timelineheight">
+			<!--fila-->
+			<ion-row>
+
+				<!--Columna 1-->
+				<ion-col>
+					<p text-center class="numberAct">1</p>
+					<p text-center id="tex-line">Datos</p>
+				</ion-col>
+
+				<!--Columna 2-->
+				<ion-col>
+					<p text-center class="numberDesact">2</p>
+					<p text-center id="tex-line">Calculos</p>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+
+	<div>
+		<ion-grid class="formulario">
+
+			<!-- Nombre común inicio -->
+			<ion-row>
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label stacked>Nombre Común</ion-label>
+			    			<ion-input type="text" placeholder="Nombre Común"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Nombre común fin -->
+
+			<!-- Nombre científico inicio -->
+			<ion-row>
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label stacked>Nombre Científico</ion-label>
+			    			<ion-input type="text" placeholder="Nombre Científico"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Nombre científico fin -->
+
+			<!-- Nombre Coordenadas inicio -->
+			<ion-row>
+				<!-- Coluna coordenada x -->
+				<ion-col>					
+					<ion-list>
+	 					<ion-item>
+	 					    <ion-label stacked>Coordenadas</ion-label>			    			
+			    			<ion-input type="text" placeholder="X"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna coordenada Y -->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>&nbsp;</ion-label> 
+			    			<ion-input type="text" placeholder="Y"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Nombre coordenadas fin -->
+
+			<ion-row>
+				<!-- Coluna cap -->
+				<ion-col>					
+					<ion-list>
+	 					<ion-item>
+	 					    <ion-label stacked>CAP</ion-label>			    			
+			    			<ion-input type="text" placeholder="Cms"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna Altura -->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>Altura Total</ion-label> 
+			    			<ion-input type="text" placeholder="Mts"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna Altura Comercial-->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>Altura Comercial</ion-label> 
+			    			<ion-input type="text" placeholder="Cms"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- fin 3 columnas -->
+
+			<!-- diametro copa inicio -->
+			<ion-row>
+				<!-- Coluna coordenada x -->
+				<ion-col>					
+					<ion-list>
+	 					<ion-item>
+	 					    <ion-label stacked>Diámetro de Copa</ion-label>			    			
+			    			<ion-input type="text" placeholder="Mayor"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna coordenada Y -->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>&nbsp;</ion-label> 
+			    			<ion-input type="text" placeholder="Menor"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- diametro copa fin -->
+
+			<!-- Estado fitosanitario inicio -->
+			<ion-row>
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label>Estado Fitosanitario</ion-label>
+							    <ion-select [(ngModel)]="estado" (ionChange)="hide()">
+							      <ion-option value="bueno" >Sano</ion-option>
+							      <ion-option value="malo" >Afectado</ion-option>
+							    </ion-select>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Estado fitosanitario fin -->
+
+			<!-- grado de afectación inicio -->
+			<ion-row *ngIf="hideMe">
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label>Nivel de Afectación</ion-label>
+							    <ion-select >
+							      <ion-option value="1">1</ion-option>
+							      <ion-option value="2">2</ion-option>
+							      <ion-option value="3">3</ion-option>
+							      <ion-option value="4">4</ion-option>
+							      <ion-option value="5">5</ion-option>
+							    </ion-select>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- grado de afectación fin -->
+
+
+		</ion-grid>
+	</div>
+
+
+</ion-content>

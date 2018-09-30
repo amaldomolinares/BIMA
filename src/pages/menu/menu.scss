@@ -1,0 +1,39 @@
+page-menu {
+
+	div#titulo {
+	background-color: #32a480;
+	height: 30%;
+	}
+
+	.toolbar-title-md{
+	font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    padding-top: 17%;
+	}
+
+	div#logo {
+    width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0px;
+    margin-top: -20%;
+    background-color: #fff;
+    border-radius: 100px;
+    }
+
+    #boton-menu{
+    background-color: #32a480;
+    border-radius: 100px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    ion-label{
+    text-align: center;
+    color: #383e42;
+    font-weight: 600;
+    }
+}

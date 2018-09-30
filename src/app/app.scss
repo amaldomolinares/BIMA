@@ -1,5 +1,67 @@
 // http://ionicframework.com/docs/theming/
+ion-header ion-icon.back-button-icon.icon {
+    color: map-get($colors,green);
+}
 
+.bg-style {
+        //background: #572364;
+        //background: #572364;
+    background: linear-gradient( rgba(69, 176, 98, 1.0), rgba(52, 162, 127, 1.0));
+    }
+
+    div#logo {
+    margin-top: 0px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0px;
+  }
+
+   div#tex {
+   	color: #fff;
+   	margin-top: -15px;
+   }
+
+   div#timeline{
+	background: linear-gradient(to right, rgba(255, 255, 255, 1.0), rgba(206, 205, 205, 1.0));
+	box-shadow: 5px 4px 20px 3px #5f5d5d;
+	margin-right: -16px;
+    margin-left: -16px;
+   }
+
+   .numberAct{
+   	background-color: #32a480;
+    border-radius: 50px;
+    width: 22%;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   .numberDesact{
+   	background-color: grey;
+    border-radius: 50px;
+    width: 22%;
+    padding: 5px;
+    font-size: 20px;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   p#tex-line{
+   	font-size: 18px;
+   	font-weight: 600;
+   	color: grey;
+   	margin-top: -10px;
+   }
+
+   .timelineheight{
+   	margin-top: -15px;
+    margin-bottom: -15px;
+   }
 
 // App Global Sass
 // --------------------------------------------------
