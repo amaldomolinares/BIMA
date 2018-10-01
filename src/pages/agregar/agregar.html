@@ -23,9 +23,9 @@
 	<!--Posicionamiento-->
 	<div id="timeline">
 		 <!--Cuadricula-->
-		<ion-grid class="timelineheight">
+		<ion-grid >
 			<!--fila-->
-			<ion-row>
+			<ion-row class="timelineheight">
 
 				<!--Columna 1-->
 				<ion-col>
@@ -51,7 +51,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			<ion-label stacked>Nombre Común</ion-label>
-			    			<ion-input type="text" placeholder="Nombre Común"></ion-input>
+			    			<ion-input type="text" placeholder="Nombre Común" [(ngModel)]="comun"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -64,7 +64,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			<ion-label stacked>Nombre Científico</ion-label>
-			    			<ion-input type="text" placeholder="Nombre Científico"></ion-input>
+			    			<ion-input type="text" placeholder="Nombre Científico" [(ngModel)]="cientifico"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -78,7 +78,7 @@
 					<ion-list>
 	 					<ion-item>
 	 					    <ion-label stacked>Coordenadas</ion-label>			    			
-			    			<ion-input type="text" placeholder="X"></ion-input>
+			    			<ion-input type="text" placeholder="X" [(ngModel)]="coordex"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -87,7 +87,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>&nbsp;</ion-label> 
-			    			<ion-input type="text" placeholder="Y"></ion-input>
+			    			<ion-input type="text" placeholder="Y" [(ngModel)]="coordey"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -100,7 +100,7 @@
 					<ion-list>
 	 					<ion-item>
 	 					    <ion-label stacked>CAP</ion-label>			    			
-			    			<ion-input type="text" placeholder="Cms"></ion-input>
+			    			<ion-input type="text" placeholder="Cms" [(ngModel)]="cap"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -109,7 +109,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>Altura Total</ion-label> 
-			    			<ion-input type="text" placeholder="Mts"></ion-input>
+			    			<ion-input type="text" placeholder="Mts" [(ngModel)]="altotal"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -118,7 +118,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>Altura Comercial</ion-label> 
-			    			<ion-input type="text" placeholder="Cms"></ion-input>
+			    			<ion-input type="text" placeholder="Cms" [(ngModel)]="altcomer"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -132,7 +132,7 @@
 					<ion-list>
 	 					<ion-item>
 	 					    <ion-label stacked>Diámetro de Copa</ion-label>			    			
-			    			<ion-input type="text" placeholder="Mayor"></ion-input>
+			    			<ion-input type="text" placeholder="Mayor" [(ngModel)]="diamayor" ></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -141,7 +141,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>&nbsp;</ion-label> 
-			    			<ion-input type="text" placeholder="Menor"></ion-input>
+			    			<ion-input type="text" placeholder="Menor" [(ngModel)]="diamenor"></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -156,8 +156,10 @@
 			    			<ion-label>Estado Fitosanitario</ion-label>
 							    <ion-select [(ngModel)]="estado" (ionChange)="hide()">
 							      <ion-option value="bueno" >Sano</ion-option>
-							      <ion-option value="malo" >Afectado</ion-option>
+							      <ion-option value="afectado" >Afectado</ion-option>
 							    </ion-select>
+
+							    
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -170,7 +172,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			<ion-label>Nivel de Afectación</ion-label>
-							    <ion-select >
+							    <ion-select [(ngModel)]="nivel" (ionChange)="nivelAct()">
 							      <ion-option value="1">1</ion-option>
 							      <ion-option value="2">2</ion-option>
 							      <ion-option value="3">3</ion-option>
@@ -182,10 +184,13 @@
 				</ion-col>
 			</ion-row>
 			<!-- grado de afectación fin -->
-
-
 		</ion-grid>
 	</div>
+	<div padding text-center button>
+          <button ion-button  block color="light" (click)="continuar()">
+           CONTINUAR
+          </button>
+    </div>
 
 
 </ion-content>

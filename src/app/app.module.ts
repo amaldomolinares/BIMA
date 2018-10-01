@@ -13,6 +13,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
 import { AgregarPage } from '../pages/agregar/agregar';
+import { AgregardosPage } from '../pages/agregardos/agregardos';
 import { InformePage } from '../pages/informe/informe';
 import { ListarPage } from '../pages/listar/listar';
 
@@ -22,6 +23,7 @@ import { ListarPage } from '../pages/listar/listar';
     HomePage,
     MenuPage,
     AgregarPage,
+    AgregardosPage,
     InformePage,
     ListarPage
   ],
@@ -36,6 +38,7 @@ import { ListarPage } from '../pages/listar/listar';
     HomePage,
     MenuPage,
     AgregarPage,
+    AgregardosPage,
     InformePage,
     ListarPage
   ],

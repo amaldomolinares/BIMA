@@ -7,5 +7,24 @@ page-agregar {
     border-radius: 25px;
    }
 
+	.item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child{
+  border-bottom: 2px solid #32a480;
+  box-shadow: 0 0px 0 0 #dedede00;
+  }
+
+  .list-md > .item-block:last-child ion-label{
+    font-size: 16px;
+  }
+  ion-input{
+      font-size: 12px;
+  }
+
+  .button{
+    border-radius: 7px;
+    background-color: #26FB51;
+    color: #fff;
+    padding: 20px 50px 20px;
+  }
+
 
 }
