@@ -1,3 +1,36 @@
 page-listar {
+	.card-md {
+		border-radius: 20px;
+		box-shadow: 4px 4px 20px 0px #1b1b1b;
+		margin-bottom: 15px;
+	}
+
+	.cardheader{
+		background-color: maroon;
+	}
+
+	.textheader{
+		font-weight: 900;
+		color: white;
+		text-align: center;
+	}
+
+	.titulo{
+		    text-align: center;
+	}
+
+	.subtitulo{
+		font-style: oblique;
+		margin-top: 25px !important;
+	}
+
+	.grilla{
+		border: solid 1px #d8d6d6;
+    	border-radius: 5px;
+    	margin-bottom: 5px;
+	}
+	.inline{
+		display: inline;
+	}
 
 }

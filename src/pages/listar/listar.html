@@ -1,18 +1,65 @@
-<!--
-  Generated template for the ListarPage page.
+<ion-header >
+<ion-navbar>
+  
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>listar</ion-title>
-  </ion-navbar>
-
+</ion-navbar>
 </ion-header>
 
+<ion-content padding class="bg-style">
 
-<ion-content padding>
+<ion-card *ngFor="let arboles of inventario">
+      <ion-card-header class="cardheader">
+		<h1 class="textheader">{{arboles.rowid + " " + arboles.comun}}</h1>
+		</ion-card-header>
+      <ion-card-content nopadding>
+        <h2 class="subtitulo">Nombre Científico: {{arboles.cientifico}}</h2><br>
+        <ion-grid class="grilla">
+          <ion-row>           
+            <ion-col text-center>
+                <h3 class="titulo">Coordenadas</h3> <hr>
+                <div class="inline" text-center>
+                   {{arboles.coordey + " - " + arboles.coordey}}
+                </div>
+            </ion-col>
+            <ion-col>
+              <h3 class="titulo">CAP</h3> <hr>
+              <div text-center>
+                {{arboles.cap}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
+        <ion-grid class="grilla" padding>
+          <ion-row>           
+            <ion-col>
+              <h3 class="titulo">Altura Total</h3> <hr>
+              <div text-center>
+                {{arboles.altotal}}
+              </div>
+            </ion-col>
+            <ion-col>
+              <h3 class="titulo">Altura Comercial</h3> <hr>
+              <div text-center>
+                {{arboles.altcomer}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <div text-center padding>
+        <button ion-button icon-end >
+          EDITAR
+          <ion-icon ios="ios-color-wand" md="md-color-wand"></ion-icon>
+        </button>
+        <button ion-button icon-end >
+          ELIMINAR
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        </button>
+          </div>
+      </ion-card-content>
+  
+
+      </ion-card>
 </ion-content>

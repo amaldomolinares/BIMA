@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
-import { HttpModule } from '@angular/http';
  
 
 import { MyApp } from './app.component';
@@ -16,6 +15,7 @@ import { AgregarPage } from '../pages/agregar/agregar';
 import { AgregardosPage } from '../pages/agregardos/agregardos';
 import { InformePage } from '../pages/informe/informe';
 import { ListarPage } from '../pages/listar/listar';
+import { EditarPage } from '../pages/editar/editar';
 
 @NgModule({
   declarations: [
@@ -25,12 +25,12 @@ import { ListarPage } from '../pages/listar/listar';
     AgregarPage,
     AgregardosPage,
     InformePage,
-    ListarPage
+    ListarPage,
+    EditarPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +40,8 @@ import { ListarPage } from '../pages/listar/listar';
     AgregarPage,
     AgregardosPage,
     InformePage,
-    ListarPage
+    ListarPage,
+    EditarPage
   ],
   providers: [
     StatusBar,
