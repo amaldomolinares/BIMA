@@ -19,7 +19,7 @@
             <ion-col text-center>
                 <h3 class="titulo">Coordenadas</h3> <hr>
                 <div class="inline" text-center>
-                   {{arboles.coordey + " - " + arboles.coordey}}
+                   {{arboles.coordex + " - " + arboles.coordey}}
                 </div>
             </ion-col>
             <ion-col>
@@ -33,27 +33,54 @@
 
         <ion-grid class="grilla" padding>
           <ion-row>           
-            <ion-col>
+            <ion-col class="columnastyle">
               <h3 class="titulo">Altura Total</h3> <hr>
               <div text-center>
                 {{arboles.altotal}}
               </div>
             </ion-col>
-            <ion-col>
+            <ion-col class="columnastyle">
               <h3 class="titulo">Altura Comercial</h3> <hr>
               <div text-center>
                 {{arboles.altcomer}}
               </div>
             </ion-col>
           </ion-row>
+          <ion-row>
+            <ion-col class="columnastyle">
+              <h3 class="titulo">Diámetro Mayor</h3> <hr>
+              <div text-center>
+                {{arboles.diamayor}}
+              </div>
+            </ion-col>
+            <ion-col class="columnastyle">
+              <h3 class="titulo">Diámetro Menor</h3> <hr>
+              <div text-center>
+                {{arboles.diamenor}}
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="columnastyle">
+              <h3 class="titulo">Estado Fitosanitario</h3> <hr>
+              <div text-center>
+                {{arboles.valor}}
+              </div>
+            </ion-col>
+            <ion-col class="columnastyle">
+              <h3 class="titulo">Nivel de Afectación</h3> <hr>
+              <div text-center>
+                {{arboles.numero}}
+              </div>
+            </ion-col>
+          </ion-row>
         </ion-grid>
-
         <div text-center padding>
-        <button ion-button icon-end >
+        <button ion-button icon-end (click)="editarDatos(arboles.rowid)">
           EDITAR
           <ion-icon ios="ios-color-wand" md="md-color-wand"></ion-icon>
         </button>
-        <button ion-button icon-end >
+        <button ion-button icon-end (click)="borrarDatos(arboles.rowid)">
           ELIMINAR
           <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
         </button>

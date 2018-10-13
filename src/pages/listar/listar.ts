@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { SQLite } from '@ionic-native/sqlite';
 import { SQLiteObject } from '@ionic-native/sqlite';
 
@@ -14,7 +14,7 @@ export class ListarPage {
 
 	inventario: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private alertCtrl: AlertController) {
   }
 
   //funcion para obtener datos
@@ -39,6 +39,12 @@ export class ListarPage {
 	    
 	}
 
+  editarDatos(rowid):void {
+    this.navCtrl.push(EditarPage, {
+      rowid:rowid
+    });
+  }
+
 	//barra de busqueda
 	getItems(ev:any) {
       
@@ -62,18 +68,39 @@ export class ListarPage {
 
   //funcion para borrar registros
   borrarDatos(rowid) {
-     this.sqlite.create({
+    let alert = this.alertCtrl.create({
+    title: 'Borrar Datos',
+    message: 'Esta apunto de borrar un registo ¿Desea continuar?',
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Aceptar',
+        handler: () => {
+          this.sqlite.create({
        name: 'bima.db',
        location: 'default'
      }).then((db: SQLiteObject) => {
-       db.executeSql('DELETE FROM paciente WHERE rowid=?', [rowid])
+       db.executeSql('DELETE FROM arbol WHERE rowid=?', [rowid])
        .then(res => {
          console.log(res);
          this.obtenerDatos();
        })
        .catch(e => console.log(e));
      }).catch(e => console.log(e));
-   }
+        }
+      }
+    ]
+  });
+  alert.present();
+}
+     
+   
 
 //cargar la base de datos al cargar toda la pagina
   ionViewDidLoad() {
