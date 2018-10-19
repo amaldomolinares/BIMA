@@ -1,18 +1,177 @@
-<!--
-  Generated template for the EditarPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>editar</ion-title>
+    <ion-title>{{arbol.comun}}</ion-title>
   </ion-navbar>
 
 </ion-header>
+  
+ 
+<ion-content padding class="bg-style">
 
+	<!-- isologo inicio-->
+	<div id="logo" padding text-center>
+    <img src="./assets/img/Logo_bima_Blanco.png">
+    </div>
+	<!-- isologo fin-->
 
-<ion-content padding>
+	<!--Bima-->
+	<div id="tex" padding text-center>
+		<h1 ion-text>BIMA</h1>
+	</div>	
+	
+	<!--Posicionamiento-->
+
+	<div>
+		<ion-grid class="formulario">
+
+			<!-- Nombre común inicio -->
+			<ion-row>
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label stacked>Nombre Común</ion-label>
+			    			<ion-input type="text" placeholder="Nombre Común" [(ngModel)]="arbol.comun"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Nombre común fin -->
+
+			<!-- Nombre científico inicio -->
+			<ion-row>
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label stacked>Nombre Científico</ion-label>
+			    			<ion-input type="text" placeholder="Nombre Científico" [(ngModel)]="arbol.cientifico"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Nombre científico fin -->
+
+			<!-- Nombre Coordenadas inicio -->
+			<ion-row>
+				<!-- Coluna coordenada x -->
+				<ion-col>					
+					<ion-list>
+	 					<ion-item>
+	 					    <ion-label stacked>Coordenadas</ion-label>			    			
+			    			<ion-input type="number" placeholder="X" [(ngModel)]="arbol.coordex"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna coordenada Y -->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>&nbsp;</ion-label> 
+			    			<ion-input type="number" placeholder="Y" [(ngModel)]="arbol.coordey"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Nombre coordenadas fin -->
+
+			<ion-row>
+				<!-- Coluna cap -->
+				<ion-col>					
+					<ion-list>
+	 					<ion-item>
+	 					    <ion-label stacked>CAP</ion-label>			    			
+			    			<ion-input type="number" placeholder="Cm" [(ngModel)]="arbol.cap"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna Altura -->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>Altura Total</ion-label> 
+			    			<ion-input type="number" placeholder="Mts" [(ngModel)]="arbol.altotal"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna Altura Comercial-->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>Altura Comercial</ion-label> 
+			    			<ion-input type="number" placeholder="Cm" [(ngModel)]="arbol.altcomer"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- fin 3 columnas -->
+
+			<!-- diametro copa inicio -->
+			<ion-row>
+				<!-- Coluna coordenada x -->
+				<ion-col>					
+					<ion-list>
+	 					<ion-item>
+	 					    <ion-label stacked>Diámetro de Copa</ion-label>			    			
+			    			<ion-input type="number" placeholder="Mayor" [(ngModel)]="arbol.diamayor" ></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+				<!-- Coluna coordenada Y -->
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			  <ion-label stacked>&nbsp;</ion-label> 
+			    			<ion-input type="number" placeholder="Menor" [(ngModel)]="arbol.diamenor"></ion-input>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- diametro copa fin -->
+
+			<!-- Estado fitosanitario inicio -->
+			<ion-row>
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label>Estado Fitosanitario</ion-label>
+							    <ion-select [(ngModel)]="estado" (ionChange)="hide()" okText="Aceptar" cancelText="Cancelar">
+							      <ion-option value="bueno" >Sano</ion-option>
+							      <ion-option value="afectado" >Afectado</ion-option>
+							    </ion-select>
+
+							    
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- Estado fitosanitario fin -->
+
+			<!-- grado de afectación inicio -->
+			<ion-row *ngIf="hideMe">
+				<ion-col>
+					<ion-list>
+	 					<ion-item>
+			    			<ion-label>Nivel de Afectación</ion-label>
+							    <ion-select [(ngModel)]="nivel" (ionChange)="nivelAct()" okText="Aceptar" cancelText="Cancelar">
+							      <ion-option value="1">1</ion-option>
+							      <ion-option value="2">2</ion-option>
+							      <ion-option value="3">3</ion-option>
+							      <ion-option value="4">4</ion-option>
+							      <ion-option value="5">5</ion-option>
+							    </ion-select>
+			  			</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<!-- grado de afectación fin -->
+		</ion-grid>
+	</div>
+	<ion-input type="hidden" [(ngModel)]="arbol.rowid" name="rowid"></ion-input>
+	<div padding text-center button>
+          <button ion-button  block color="light" (click)="actualizarDatos()">
+           ACTUALIZAR
+          </button>
+    </div>
+
 
 </ion-content>

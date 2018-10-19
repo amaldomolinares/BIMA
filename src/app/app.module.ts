@@ -5,7 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
 import { SQLite } from '@ionic-native/sqlite';
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { Toast } from '@ionic-native/toast';
+import { HttpModule } from '@angular/http';
  
 
 import { MyApp } from './app.component';
@@ -30,6 +32,7 @@ import { EditarPage } from '../pages/editar/editar';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -48,6 +51,7 @@ import { EditarPage } from '../pages/editar/editar';
     SplashScreen,
     Camera,
     SQLite,
+    SQLitePorter,
     Toast,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]

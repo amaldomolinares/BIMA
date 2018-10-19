@@ -65,9 +65,10 @@ nivel:null;
       db.executeSql('INSERT INTO arbol VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?)',[this.arbol.comun, this.arbol.cientifico, this.arbol.coordex, this.arbol.coordey, this.arbol.cap, this.arbol.altotal, this.arbol.altcomer, this.arbol.diamayor, this.arbol.diamenor, this.arbol.valor, this.arbol.numero])
         .then(res => {
           console.log(JSON.stringify (res));
-          this.toast.show('Datos Guardados', '5000', 'center').subscribe(
+          this.toast.show('Datos Guardados', '3000', 'center').subscribe(
             toast => {
-              this.navCtrl.push(AgregardosPage,{comun:      this.arbol.comun, 
+                this.navCtrl.popToRoot();
+             /* this.navCtrl.push(AgregardosPage,{comun:      this.arbol.comun, 
                                       cientifico: this.arbol.cientifico, 
                                       coordex:    this.arbol.coordex, 
                                       coordey:    this.arbol.coordey,
@@ -77,25 +78,18 @@ nivel:null;
                                       diamayor:   this.arbol.diamayor,
                                       diamenor:   this.arbol.diamenor,
                                       valor:      this.arbol.valor,
-                                      numero:     this.arbol.numero,});
+                                      numero:     this.arbol.numero,});*/
             }
           );
         })
         .catch(e => {
           console.log(JSON.stringify (e));
-          this.toast.show(e, '5000', 'center').subscribe(
+          this.toast.show(e, '3000', 'center').subscribe(
             toast => {
               console.log(JSON.stringify(toast));
             }
           );
         });
-    }).catch(e => {
-      console.log(JSON.stringify (e));
-      this.toast.show(e, '5000', 'center').subscribe(
-        toast => {
-          console.log(JSON.stringify(toast));
-        }
-      );
     });
   }
 

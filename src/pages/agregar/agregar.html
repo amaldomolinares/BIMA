@@ -51,7 +51,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			<ion-label stacked>Nombre Común</ion-label>
-			    			<ion-input type="text" placeholder="Nombre Común" [(ngModel)]="arbol.comun"></ion-input>
+			    			<ion-input type="text" placeholder="Nombre Común" [(ngModel)]="arbol.comun" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -64,7 +64,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			<ion-label stacked>Nombre Científico</ion-label>
-			    			<ion-input type="text" placeholder="Nombre Científico" [(ngModel)]="arbol.cientifico"></ion-input>
+			    			<ion-input type="text" placeholder="Nombre Científico" [(ngModel)]="arbol.cientifico" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -78,7 +78,7 @@
 					<ion-list>
 	 					<ion-item>
 	 					    <ion-label stacked>Coordenadas</ion-label>			    			
-			    			<ion-input type="number" placeholder="X" [(ngModel)]="arbol.coordex"></ion-input>
+			    			<ion-input type="number" placeholder="X" [(ngModel)]="arbol.coordex" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -87,7 +87,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>&nbsp;</ion-label> 
-			    			<ion-input type="number" placeholder="Y" [(ngModel)]="arbol.coordey"></ion-input>
+			    			<ion-input type="number" placeholder="Y" [(ngModel)]="arbol.coordey" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -100,7 +100,7 @@
 					<ion-list>
 	 					<ion-item>
 	 					    <ion-label stacked>CAP</ion-label>			    			
-			    			<ion-input type="number" placeholder="Cm" [(ngModel)]="arbol.cap"></ion-input>
+			    			<ion-input type="number" placeholder="Cm" [(ngModel)]="arbol.cap" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -109,7 +109,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>Altura Total</ion-label> 
-			    			<ion-input type="number" placeholder="Mts" [(ngModel)]="arbol.altotal"></ion-input>
+			    			<ion-input type="number" placeholder="Mts" [(ngModel)]="arbol.altotal" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -118,7 +118,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>Altura Comercial</ion-label> 
-			    			<ion-input type="number" placeholder="Cm" [(ngModel)]="arbol.altcomer"></ion-input>
+			    			<ion-input type="number" placeholder="Cm" [(ngModel)]="arbol.altcomer" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -132,7 +132,7 @@
 					<ion-list>
 	 					<ion-item>
 	 					    <ion-label stacked>Diámetro de Copa</ion-label>			    			
-			    			<ion-input type="number" placeholder="Mayor" [(ngModel)]="arbol.diamayor" ></ion-input>
+			    			<ion-input type="number" placeholder="Mayor" [(ngModel)]="arbol.diamayor" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -141,7 +141,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>&nbsp;</ion-label> 
-			    			<ion-input type="number" placeholder="Menor" [(ngModel)]="arbol.diamenor"></ion-input>
+			    			<ion-input type="number" placeholder="Menor" [(ngModel)]="arbol.diamenor" required></ion-input>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -154,7 +154,7 @@
 					<ion-list>
 	 					<ion-item>
 			    			<ion-label>Estado Fitosanitario</ion-label>
-							    <ion-select [(ngModel)]="estado" (ionChange)="hide()" okText="Aceptar" cancelText="Cancelar">
+							    <ion-select [(ngModel)]="estado" (ionChange)="hide()" okText="Aceptar" cancelText="Cancelar" required>
 							      <ion-option value="bueno" >Sano</ion-option>
 							      <ion-option value="afectado" >Afectado</ion-option>
 							    </ion-select>
