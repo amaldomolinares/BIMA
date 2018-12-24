@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { Toast } from '@ionic-native/toast';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import 'rxjs/add/operator/toPromise';
@@ -14,7 +14,7 @@ import 'rxjs/add/operator/toPromise';
 export class InformePage {
 
 
-	inventario: any[] = [];
+public	inventario: any[] = [];
 
   constructor(public navCtrl: NavController, 
   	public navParams: NavParams,
@@ -31,7 +31,7 @@ export class InformePage {
       db.executeSql('SELECT * FROM arbol ORDER BY rowid ASC',[])
         .then(res => {
            this.inventario = [];
-         for(let i=0; i<res.rows.length; i++) {
+         for(var i=0; i<res.rows.length; i++) {
             this.inventario.fill({rowid:res.rows.item(i).rowid, 
             	comun:res.rows.item(i).comun, 
             	cientifico:res.rows.item(i).cientifico, 
@@ -43,14 +43,16 @@ export class InformePage {
             	diamayor:res.rows.item(i).diamayor, 
             	diamenor:res.rows.item(i).diamenor, 
             	valor:res.rows.item(i).valor, 
-            	numero:res.rows.item(i).numero})
+            	numero:res.rows.item(i).numero
+            })
+        
             //console.log(this.inventario)
 
    var headers = new Headers();
-            //headers.append("Accept", 'application/json');
+            headers.append("Accept", 'application/json');
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
-            //let options = new RequestOptions({ headers: headers });
-            let params = "rowid" + res.rows.item(i).rowid
+            let options = new RequestOptions({ headers: headers });
+            let params = "rowid=" + res.rows.item(i).rowid
              + "&comun=" + res.rows.item(i).comun
              + "&cientifico=" + res.rows.item(i).cientifico
              + "&coordex=" + res.rows.item(i).coordex
@@ -62,22 +64,23 @@ export class InformePage {
              + "&diamenor=" + res.rows.item(i).diamenor
              + "&valor=" + res.rows.item(i).valor
              + "&numero=" + res.rows.item(i).numero;
-console.log(params)
-   this.http.post('http://www.orniat.com.co/BIMA/insert.php', JSON.stringify(params), { headers: headers })
+
+         console.log(params)
+		  this.http.post('http://www.orniat.com.co/BIMA/insert.php', params, options)
+  			  
               .subscribe(inventario => {
                 this.inventario.push(inventario.json())
-                console.log(inventario);
-
-                this.toast.show('Datos Sincronizados!', '4000', 'center').subscribe(
+                console.log(inventario["_body"]);
+				this.toast.show('Datos Sincronizados!' , '4000', 'center').subscribe(
                   toast => {
-                   // console.log(JSON.stringify(inventario));
+                    console.log(inventario);
                   }
                 )
               }, error => {
                 console.log(error.message);// Error obteniendo los datos!
                 this.toast.show('Error en la sincronizacion!' + error.message, '4000', 'center').subscribe(
                   toast => {
-                    console.log(JSON.stringify(toast));
+                    console.log(toast);
                   }
                 )
               });

@@ -22,26 +22,31 @@
 	
 	<!--Posicionamiento-->
 	<div id="timeline">
-		 <!--Cuadricula-->
-		<ion-grid >
-			<!--fila-->
-			<ion-row class="timelineheight">
-
-				<!--Columna 1-->
-				<ion-col>
-					<p text-center class="numberAct">1</p>
-					<p text-center id="tex-line">Datos</p>
-				</ion-col>
-
-				<!--Columna 2-->
-				<ion-col>
-					<p text-center class="numberDesact">2</p>
-					<p text-center id="tex-line">Calculos</p>
-				</ion-col>
-			</ion-row>
-		</ion-grid>
-	</div>
-
+			<!--Cuadricula-->
+		   <ion-grid >
+			   <!--fila-->
+			   <ion-row class="timelineheight">
+   
+				   <!--Columna 1-->
+				   <ion-col>
+					   <p text-center class="numberDesact">1</p>
+					   <p text-center id="tex-line">Fotos</p>
+				   </ion-col>
+   
+				   <!--Columna 2-->
+				   <ion-col>
+					   <p text-center class="numberAct">2</p>
+					   <p text-center id="tex-line">Datos</p>
+				   </ion-col>
+   
+				   <!--Columna 3-->
+				   <ion-col>
+					   <p text-center class="numberDesact">3</p>
+					   <p text-center id="tex-line">Calculos</p>
+				   </ion-col>
+			   </ion-row>
+		   </ion-grid>
+	   </div>
 	<div>
 		<ion-grid class="formulario">
 
@@ -77,8 +82,8 @@
 				<ion-col>					
 					<ion-list>
 	 					<ion-item>
-	 					    <ion-label stacked>Coordenadas</ion-label>			    			
-			    			<ion-input type="number" placeholder="X" [(ngModel)]="arbol.coordex" required></ion-input>
+	 					    <ion-label stacked>Coordenadas</ion-label>	
+	 					    <ion-label labelcoor>{{arbol.coodex}}</ion-label> 
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -87,7 +92,8 @@
 					<ion-list>
 	 					<ion-item>
 			    			  <ion-label stacked>&nbsp;</ion-label> 
-			    			<ion-input type="number" placeholder="Y" [(ngModel)]="arbol.coordey" required></ion-input>
+			    			 
+							  <ion-label labelcoor>{{arbol.coodey}}</ion-label>
 			  			</ion-item>
 					</ion-list>
 				</ion-col>
@@ -187,10 +193,9 @@
 		</ion-grid>
 	</div>
 	<div padding text-center button>
-          <button ion-button  block color="light" (click)="guardarDatos()">
+          <button ion-button  block  (click)="guardarDatos()">
            CONTINUAR
           </button>
     </div>
-
 
 </ion-content>

@@ -25,14 +25,14 @@ export class ListarPage {
       location: 'default'
     })
     .then((db: SQLiteObject) => {
-      db.executeSql('CREATE TABLE IF NOT EXISTS arbol(rowid INTEGER PRIMARY KEY, comun TEXT, cientifico TEXT, coordex INT, coordey INT, cap INT, altotal INT, altcomer INT, diamayor INT, diamenor INT, valor INT, numero INT)',[])
+      db.executeSql('CREATE TABLE IF NOT EXISTS arbol(rowid INTEGER PRIMARY KEY, comun TEXT, cientifico TEXT, coordex INT, coordey INT, cap INT, altotal INT, altcomer INT, diamayor INT, diamenor INT, valor INT, numero INT, foto TEXT)',[])
       .then(res => console.log('Executed SQL'))
       .catch(e => console.log(e));
       db.executeSql('SELECT * FROM arbol ORDER BY rowid ASC',[])
       .then(res => {
         this.inventario = [];
         for(let i=0; i<res.rows.length; i++) {
-          this.inventario.push({rowid:res.rows.item(i).rowid, comun:res.rows.item(i).comun, cientifico:res.rows.item(i).cientifico, coordex:res.rows.item(i).coordex, coordey:res.rows.item(i).coordey, cap:res.rows.item(i).cap, altotal:res.rows.item(i).altotal, altcomer:res.rows.item(i).altcomer, diamayor:res.rows.item(i).diamayor, diamenor:res.rows.item(i).diamenor, valor:res.rows.item(i).valor, numero:res.rows.item(i).numero})
+          this.inventario.push({rowid:res.rows.item(i).rowid, comun:res.rows.item(i).comun, cientifico:res.rows.item(i).cientifico, coordex:res.rows.item(i).coordex, coordey:res.rows.item(i).coordey, cap:res.rows.item(i).cap, altotal:res.rows.item(i).altotal, altcomer:res.rows.item(i).altcomer, diamayor:res.rows.item(i).diamayor, diamenor:res.rows.item(i).diamenor, valor:res.rows.item(i).valor, numero:res.rows.item(i).numero, foto:res.rows.item(i).foto})
         }
       }).catch(e => console.log(e));
   	})  .catch(e => console.log(e)); 

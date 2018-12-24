@@ -8,7 +8,10 @@ import { SQLite } from '@ionic-native/sqlite';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { Toast } from '@ionic-native/toast';
 import { HttpModule } from '@angular/http';
- 
+import { Geolocation } from '@ionic-native/geolocation';
+import { Diagnostic } from '@ionic-native/diagnostic';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { File } from '@ionic-native/file';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -18,6 +21,8 @@ import { AgregardosPage } from '../pages/agregardos/agregardos';
 import { InformePage } from '../pages/informe/informe';
 import { ListarPage } from '../pages/listar/listar';
 import { EditarPage } from '../pages/editar/editar';
+import { CameraPage } from '../pages/camera/camera';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ import { EditarPage } from '../pages/editar/editar';
     AgregardosPage,
     InformePage,
     ListarPage,
-    EditarPage
+    EditarPage,
+    CameraPage
   ],
   imports: [
     BrowserModule,
@@ -44,14 +50,19 @@ import { EditarPage } from '../pages/editar/editar';
     AgregardosPage,
     InformePage,
     ListarPage,
-    EditarPage
+    EditarPage,
+    CameraPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
     SQLite,
+    WebView,
+    Diagnostic,
+    File,
     SQLitePorter,
+    Geolocation,
     Toast,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]

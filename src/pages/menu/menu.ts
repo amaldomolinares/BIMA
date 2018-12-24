@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { AgregarPage } from '../agregar/agregar';
 import { InformePage } from '../informe/informe';
 import { ListarPage } from '../listar/listar';
 import { HomePage } from '../home/home';
+import { CameraPage } from '../camera/camera';
 
 
 @IonicPage()
@@ -21,7 +21,7 @@ export class MenuPage {
 	this.navCtrl.setRoot(HomePage);}
 
     iragregar():void{
-	this.navCtrl.push(AgregarPage);}
+	this.navCtrl.push(CameraPage);}
 
 	iralistar():void{
 	this.navCtrl.push(ListarPage);}
